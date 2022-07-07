@@ -1,6 +1,7 @@
 html,body{
     background-image: url(./assets/remainder.jpg), linear-gradient(rgba(224, 217, 217, 0.5),rgba(224, 208, 208, 0.5));
     background-size: cover;
+    background-position: center center;
     background-repeat: no-repeat;
     background-blend-mode: multiply;
     height: 100%;

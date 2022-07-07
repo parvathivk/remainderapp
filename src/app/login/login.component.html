@@ -1,9 +1,16 @@
+<nav class="navbar navbar-light background-color: #e3f2fd;" >
+    <a class="navbar-brand position-relative  " href="#">
+        <img src="../assets/NEVER_FORGET.png" width="200" height="200" alt="">
+    </a>
+</nav>
 <div class="container">
 <div class="row">
     <div class="col-4"></div>
     <div class="col-4 log1">
-        <h1 class="text-center">Log In</h1>
-        <form [formGroup]="loginForm" (ngSubmit)="login()" action="" class="border bg-light">
+        
+        <form  [formGroup]="loginForm" (ngSubmit)="login()" action="" class="border bg-light bg-gradient bg-opacity-25 rounded-4 border border-gradient border-light shadow-lg p-3 mb-5 bg-body rounded">
+            
+                <h1 class="text-center ">Log In</h1>
             <div class="mt-3 p-2">
                 <input formControlName="username" type="text" id="userid" class="form-control" placeholder="UserId">
             </div>
@@ -15,8 +22,8 @@
             <div *ngIf="this.loginForm.get('password')?.touched&&this.loginForm.get('password')?.errors" style="color: red;">Invalid Password</div>
 
             <div class="mt-3 p-2">
-                <button class="btn btn-success" routerLink="dashboard">Login</button>
-                <p style="color:rgb(2, 1, 1);align-items:baseline;">Not a user? <a routerLink="register">Register</a></p>
+                <button class="btn btn-primary" routerLink="dashboard">Login</button>
+                <p style="color:rgb(7, 6, 6);align-items:baseline;"> <br> Not a user?  <a routerLink="register">Register</a></p>
 
             </div>
         </form>
