@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataserviceService } from '../dataservice.service';
 
 @Component({
   selector: 'app-eventform',
@@ -7,9 +8,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EventformComponent implements OnInit {
 
-  constructor() { }
+  events:any
+  loggedUserId=localStorage.getItem('loggedUserId')
+  
+
+  constructor(private ds:DataserviceService) {
+
+    this.ds.getEvent(this.loggedUserId)
+    .subscribe((result:any)=>{
+      
+      this.events=result.event
+      
+    },
+    result=>{
+      alert(result.error.message)
+    })
+   }
+   
+
 
   ngOnInit(): void {
   }
+
+  
+
 
 }

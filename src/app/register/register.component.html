@@ -8,7 +8,7 @@
     <div class="row">
         <div class="col-4"></div>
         <div class="col-4 log1">
-            <form [formGroup]="registerForm" action="" class="border bg-light bg-gradient bg-opacity-25 rounded-4 border border-gradient border-light shadow-lg p-3 mb-5 bg-body rounded">
+            <form [formGroup]="registerForm" action="" (ngSubmit)="register()" class="border bg-light bg-gradient bg-opacity-25 rounded-4 border border-gradient border-light shadow-lg p-3 mb-5 bg-body rounded">
                 <h1 class="text-center">Register</h1>
                 <div class="mt-3 p-2">
                     <input formControlName="username" type="text" id="username" class="form-control" placeholder="Username">
@@ -16,7 +16,7 @@
                 <div *ngIf="this.registerForm.get('username')?.touched&&this.registerForm.get('username')?.errors" style="color: red;">Invalid </div>
 
                 <div class="mt-3 p-2">
-                    <input formControlname="userid" type="text" id="userid" class="form-control" placeholder="UserId">
+                    <input formControlName="userid" type="text" id="userid" class="form-control" placeholder="UserId">
                 </div>
                 <div *ngIf="this.registerForm.get('userid')?.touched&&this.registerForm.get('userid')?.errors" style="color: red;">Invalid </div>
 
