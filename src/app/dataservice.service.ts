@@ -57,5 +57,12 @@ export class DataserviceService {
 
   }
 
+  removeEvent(k:any){
+    const data={
+      k
+    }
+    return this.http.post('http://localhost:3000/removeEvent',data,this.getOptions())
+  }
+
   
 }

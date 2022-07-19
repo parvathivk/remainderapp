@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { subscribeOn } from 'rxjs';
 import { DataserviceService } from '../dataservice.service';
 
 @Component({
@@ -28,6 +29,18 @@ export class EventformComponent implements OnInit {
 
 
   ngOnInit(): void {
+  }
+
+  removeEvent(k:any){
+    this.ds.removeEvent(k)
+    .subscribe((result:any)=>{
+      if(result){
+        window.location.reload();
+      }
+    },
+    result=>{
+      alert(result.error.message)
+    })
   }
 
   
